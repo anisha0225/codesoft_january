@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Parlour</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Ice Cream Parlour</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+
+        <div class="content active">
+            <h1>Strawberry<br><span>Icecream</span></h1>
+            <p>Strawberry ice cream is a flavor of ice cream made with strawberry or strawberry flavoring. It is made by blending in fresh strawberries or strawberry flavoring with the eggs, cream, vanilla, and sugar used to make ice cream.A good strawberry ice cream feels wholly refreshing, and it's one of those foods that has a tangy sharpness my palate craves.</p>
+            <a href="https://en.wikipedia.org/wiki/Strawberry_ice_cream#:~:text=Strawberry%20ice%20cream%20is%20a,colored%20pink%20or%20light%20red.">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Apple<br><span>Icecream</span></h1>
+            <p>Your taste buds will lie apple-y ever after! Apples, cinnamon & brown sugar combined with caramel swirls in our creamy apple flavored ice cream.This apple ice cream will be perfect for enjoying all of its unique flavors during the fall apple season. And don't forget to drizzle some caramel sauce on top!</p>
+            <a href="https://serenalissy.com/apple-ice-cream/">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Coffee<br><span>Icecream</span></h1>
+            <p>Coffee ice cream is one of our favorite choices for dessert after a good meal. It combines two of the things we love, coffee and ice cream. The combination of bold coffee flavors with the rich, creamy texture of the ice cream create a unique flavor with just the right amount of caffeine.</p>
+            <a href="https://www.bakedbyanintrovert.com/homemade-coffee-ice-cream/">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Banana<br><span>Icecream</span></h1>
+            <p> Banana Icecream is a good alternative to cool off and enjoy the sweetness. Banana is known to be a good source of pottasium which is very good for heart health.</p>
+            <a href="https://www.wellplated.com/homemade-banana-ice-cream/">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Mint<br><span>Icecream</span></h1>
+            <p>A deliciously creamy and minty ice cream base mixed with extra minty, buttery, bittersweet peppermint chocolate pieces dispersed throughout the ice cream Stracciatella-style. This really is the BEST Mint Chocolate Chip Ice Cream ever!  </p>
+            <a href="https://www.theflavorbender.com/the-best-mint-chocolate-chip-ice-cream/">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+
+        </div>
+
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        const menuBtn =document.querySelector(".menu-btn");
+        const navigation =document.querySelector(".navigation");
+
+       
+
+        menuBtn.addEventListener("click",() => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+
+        });
+
+        const btns =document.querySelectorAll(".nav-btn");
+        const slides =document.querySelectorAll(".video-slide");
+        const contents =document.querySelectorAll(".content");
+
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=>{
+                btn.classList.remove("active");
+            });
+            slides.forEach((slide)=>{
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content)=>{
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+
+
+        }
+
+        btns.forEach((btn,i)=>{
+            btn.addEventListener("click",()=>{
+                sliderNav(i);
+            })
+        })
+    </script>
+</body>
+</html>
